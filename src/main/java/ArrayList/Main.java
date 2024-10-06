@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Removed element at index 1: " + removed);
         System.out.println("After remove at index 1: " + list.get(0) + ", " + list.get(1) + ", " + list.get(2));
 
-        System.out.println("List size: " + list.size()); // Ожидаем 3
+        System.out.println("List size: " + list.size());
 
         list.clear();
         System.out.println("After clear, list size: " + list.size());
