@@ -1,4 +1,6 @@
-package MessageEnrichment;
+package enrichments.repository;
+
+import enrichments.domain.User;
 
 public interface UserRepositoryInterface {
     User findByMsisdn(String msisdn);

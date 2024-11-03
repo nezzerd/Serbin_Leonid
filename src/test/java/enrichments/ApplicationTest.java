@@ -1,7 +1,12 @@
-package MessageEnrichment;
+package enrichments;
 
+import enrichments.domain.Message;
+import enrichments.domain.ContentKeys;
+import enrichments.domain.User;
+import enrichments.domain.EnrichmentType;
+import enrichments.repository.UserRepository;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,11 +16,13 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class ApplicationTest {
 
     @Test
+    @DisplayName("Should enrich message in a concurrent environment successfully")
     void shouldSucceedEnrichmentInConcurrentEnvironmentSuccessfully() throws InterruptedException {
         UserRepository userRepository = new UserRepository();
         userRepository.updateUserByMsisdn("88005553535", new User("Vasya", "Ivanov"));

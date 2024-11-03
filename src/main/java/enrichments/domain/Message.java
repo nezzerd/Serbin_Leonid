@@ -1,4 +1,4 @@
-package MessageEnrichment;
+package enrichments.domain;
 
 import java.util.Map;
 

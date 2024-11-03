@@ -1,12 +1,18 @@
-package MessageEnrichment;
+package enrichments;
 
+import enrichments.domain.User;
+import enrichments.repository.UserRepository;
+import enrichments.strategy.MSISDNStrategy;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 
 class MSISDNStrategyTest {
 
@@ -20,6 +26,7 @@ class MSISDNStrategyTest {
     }
 
     @Test
+    @DisplayName("Should enrich message when user exists")
     void shouldEnrichMessageWhenUserExists() {
         Map<String, String> content = new HashMap<>();
         content.put("msisdn", "88005553535");
@@ -29,6 +36,7 @@ class MSISDNStrategyTest {
     }
 
     @Test
+    @DisplayName("Should not enrich when MSISDN is absent")
     void shouldNotEnrichWhenMsisdnIsAbsent() {
         Map<String, String> content = new HashMap<>();
         content.put("action", "button_click");
@@ -38,6 +46,7 @@ class MSISDNStrategyTest {
     }
 
     @Test
+    @DisplayName("Should not enrich when user does not exist")
     void shouldNotEnrichWhenUserDoesNotExist() {
         Map<String, String> content = new HashMap<>();
         content.put("msisdn", "nonexistent_msisdn");

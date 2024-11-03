@@ -1,4 +1,4 @@
-package MessageEnrichment;
+package enrichments.domain;
 
 public class ContentKeys {
     public static final String MSISDN = "msisdn";

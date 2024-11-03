@@ -1,4 +1,8 @@
-package MessageEnrichment;
+package enrichments.strategy;
+
+import enrichments.domain.ContentKeys;
+import enrichments.repository.UserRepositoryInterface;
+import enrichments.domain.User;
 
 import java.util.Map;
 

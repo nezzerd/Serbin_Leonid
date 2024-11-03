@@ -1,4 +1,6 @@
-package MessageEnrichment;
+package enrichments.repository;
+
+import enrichments.domain.User;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;

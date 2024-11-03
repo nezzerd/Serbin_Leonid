@@ -1,4 +1,4 @@
-package MessageEnrichment;
+package enrichments.strategy;
 
 import java.util.Map;
 
